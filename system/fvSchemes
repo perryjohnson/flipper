@@ -15,16 +15,41 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+ddtSchemes
+{
+        default         steadyState;
+}
+
 gradSchemes
 {
+        default         leastSquares;
 }
 
 divSchemes
 {
+        default         none;
 }
 
 laplacianSchemes
 {
+        default         none;
+            laplacian(1,p)  Gauss linear corrected;
+}
+
+interpolationSchemes
+{
+        default         linear;
+}
+
+snGradSchemes
+{
+        default         corrected;
+}
+
+fluxRequired
+{
+        default         no;
+            p               ;
 }
 
 // ************************************************************************* //
