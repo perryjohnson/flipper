@@ -37,19 +37,19 @@ FoamFile
     }
     frontplane
     {
-        type            patch;
+        type            symmetryPlane;
         nFaces          18033;
         startFace       3061330;
     }
     backplane
     {
-        type            patch;
+        type            symmetryPlane;
         nFaces          18138;
         startFace       3079363;
     }
     Flipper_Flipper
     {
-        type            wall;
+        type            slip;
         nFaces          110104;
         startFace       3097501;
     }

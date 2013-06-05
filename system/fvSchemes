@@ -17,39 +17,39 @@ FoamFile
 
 ddtSchemes
 {
-        default         steadyState;
+    default         steadyState;
 }
 
 gradSchemes
 {
-        default         leastSquares;
+    default         leastSquares;
 }
 
 divSchemes
 {
-        default         none;
+    default         none;
 }
 
 laplacianSchemes
 {
-        default         none;
-            laplacian(1,p)  Gauss linear corrected;
+    default         none;
+    laplacian(1,p)  Gauss linear corrected;
 }
 
 interpolationSchemes
 {
-        default         linear;
+    default         linear;
 }
 
 snGradSchemes
 {
-        default         corrected;
+    default         corrected;
 }
 
 fluxRequired
 {
-        default         no;
-            p               ;
+    default         no;
+    p               ;
 }
 
 // ************************************************************************* //
