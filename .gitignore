@@ -1,1 +1,13 @@
 log*
+0/*Level
+constant/extendedFeatureEdgeMesh
+constant/triSurface/Flipper.eMesh
+constant/polyMesh/*Level
+constant/polyMesh/*Zones
+constant/polyMesh/faces
+constant/polyMesh/level0Edge
+constant/polyMesh/neighbour
+constant/polyMesh/owner
+constant/polyMesh/points
+constant/polyMesh/refinementHistory
+constant/polyMesh/surfaceIndex
