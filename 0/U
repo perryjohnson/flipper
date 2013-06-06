@@ -17,32 +17,32 @@ FoamFile
 
 dimensions      [0 1 -1 0 0 0 0];
 
-internalField   uniform (29.7080421 4.17519303 0);
+internalField   uniform (29.7080421 4.17519303 0);  // set AoA = 8 deg
 
 boundaryField
 {
     inlet
     {
         type            freestream;
-        freestreamValue uniform (29.7080421 4.17519303 0);
+        freestreamValue uniform (29.7080421 4.17519303 0);  // set AoA = 8 deg
     }
     outlet
     {
         type            freestream;
-        freestreamValue uniform (29.7080421 4.17519303 0);
+        freestreamValue uniform (29.7080421 4.17519303 0);  // set AoA = 8 deg
     }
     frontplane
     {
-        type            symmetryPlane;
+        type            symmetryPlane;  // periodic BC
     }
     backplane
     {
-        type            symmetryPlane;
+        type            symmetryPlane;  // periodic BC
     }
     Flipper_Flipper
     {
         type            fixedValue;
-        value           uniform (0 0 0);
+        value           uniform (0 0 0);  // no slip BC
     }
 }
 
