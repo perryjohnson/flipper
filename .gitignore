@@ -11,3 +11,6 @@ constant/polyMesh/owner
 constant/polyMesh/points
 constant/polyMesh/refinementHistory
 constant/polyMesh/surfaceIndex
+0.*
+[1-9]*
+postProcessing
