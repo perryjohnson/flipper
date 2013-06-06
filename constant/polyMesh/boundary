@@ -49,7 +49,7 @@ FoamFile
     }
     Flipper_Flipper
     {
-        type            wall;
+        type            slip;
         nFaces          110104;
         startFace       3097501;
     }
