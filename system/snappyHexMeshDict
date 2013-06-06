@@ -18,7 +18,7 @@ FoamFile
 // Which of the steps to run
 castellatedMesh true;
 snap            true;
-addLayers       true;
+addLayers       false;
 
 
 // Geometry. Definition of all surfaces. All surfaces are of class
@@ -36,13 +36,13 @@ geometry
     }
 
     // User defined region names
-    /*//- Refine a bit extra around the small centre hole
+    //- Refine a bit extra in the wake behind the flipper
     refineHole
     {
-        type searchableSphere;
-        centre (0 0 -0.012);
-        radius 0.003;
-    }*/
+        type  searchableBox;  // region defined by bounding box
+        min   (-0.1 -0.1 0);
+        max   (0.5 0.1 0.05);
+    }
 };
 
 
@@ -108,7 +108,8 @@ castellatedMeshControls
         Flipper
         {
             // Surface-wise min and max refinement level
-            level (5 6);
+            // level (5 6);  // fine mesh (from Darwin)
+            level (2 3);   // coarse mesh
         }
     }
 
@@ -131,15 +132,11 @@ castellatedMeshControls
 
     refinementRegions
     {
-        /*refineHole
-        {
-            mode inside;
-            levels ((1E15 3));
-        }*/
         Flipper
         {
             mode distance;
-            levels ((1e-3 6) (1e-2 2));
+            // levels ((1e-3 6) (1e-2 2));  // fine mesh (from Darwin)
+            levels ((1e-3 3) (1e-2 2));  // coarse mesh
         }
     }
 
@@ -153,8 +150,7 @@ castellatedMeshControls
     // NOTE: This point should never be on a face, always inside a cell, even
     // after refinement.
     // This is an outside point locationInMesh (-0.033 -0.033 0.0033);
-    //locationInMesh (-9.23149e-05 -0.0025 -0.0025); // Inside point
-    locationInMesh (0.15 0 0.025);
+    locationInMesh (0.15 0 0.025);  // a point inside the flipper surface?
 
     // Whether any faceZones (as specified in the refinementSurfaces)
     // are only on the boundary of corresponding cellZones or also allow

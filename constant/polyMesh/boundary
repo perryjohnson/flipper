@@ -15,43 +15,31 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-6
+4
 (
     inlet
     {
         type            patch;
-        nFaces          1600;
-        startFace       3051730;
+        nFaces          750;
+        startFace       30325;
     }
     outlet
     {
         type            patch;
-        nFaces          1600;
-        startFace       3053330;
-    }
-    farfield
-    {
-        type            patch;
-        nFaces          6400;
-        startFace       3054930;
+        nFaces          200;
+        startFace       31075;
     }
     frontplane
     {
         type            symmetryPlane;
-        nFaces          18033;
-        startFace       3061330;
+        nFaces          2200;
+        startFace       31275;
     }
     backplane
     {
         type            symmetryPlane;
-        nFaces          18138;
-        startFace       3079363;
-    }
-    Flipper_Flipper
-    {
-        type            wall;
-        nFaces          110104;
-        startFace       3097501;
+        nFaces          2200;
+        startFace       33475;
     }
 )
 

@@ -30,11 +30,6 @@ boundaryField
         type            freestream;
         freestreamValue uniform 0.14;
     }
-    farfield
-    {
-        type            freestream;
-        freestreamValue uniform 0.14;
-    }
     frontplane
     {
         type            symmetryPlane;

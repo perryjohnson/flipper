@@ -21,28 +21,23 @@ internalField   uniform 0;
 
 boundaryField
 {
-    backplane
+    inlet          
     {
-        type        symmetryPlane;
+        type        freestreamPressure;
+    }
+    outlet           
+    {
+        type        freestreamPressure;
     }
     frontplane
     {
         type        symmetryPlane;
     }
-    inlet          
+    backplane
     {
-        type        zeroGradient;
-    }
-    outlet           
-    {
-        type        fixedValue;
-        value       uniform 0;
+        type        symmetryPlane;
     }
     Flipper_Flipper
-    {
-        type        zeroGradient;
-    }
-    farfield
     {
         type        zeroGradient;
     }
