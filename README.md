@@ -14,7 +14,7 @@ Apply periodic BCs to the front and back planes:
 `$ vim constant/polyMesh/boundary`  
 In `frontplane` and `backplane` dictionaries, change `type` to `symmetryPlane`
 
-Set the angle of attack:
+Set the angle of attack:  
 `$ vim 0/U`  
 Set Ux and Uy in `internalField`, `inlet`, and `outlet`
 
