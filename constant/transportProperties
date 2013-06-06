@@ -9,43 +9,33 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       volVectorField;
-    location    "0";
-    object      U;
+    class       dictionary;
+    location    "constant";
+    object      transportProperties;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 1 -1 0 0 0 0];
+transportModel  Newtonian;
 
-internalField   uniform (0 0 0);
+rho             rho [ 1 -3 0 0 0 0 0 ] 1;
 
-boundaryField
+nu              nu [ 0 2 -1 0 0 0 0 ] 1e-05;
+
+CrossPowerLawCoeffs
 {
-    inlet
-    {
-        type            fixedValue;
-        value           uniform (5 0 0);
-    }
-    outlet
-    {
-        type            zeroGradient;
-    }
-    farfield
-    {
-        type            zeroGradient;
-    }
-    frontplane
-    {
-        type            symmetryPlane;
-    }
-    backplane
-    {
-        type            symmetryPlane;
-    }
-    Flipper_Flipper
-    {
-        type            wall;
-    }
+    nu0             nu0 [ 0 2 -1 0 0 0 0 ] 1e-06;
+    nuInf           nuInf [ 0 2 -1 0 0 0 0 ] 1e-06;
+    m               m [ 0 0 1 0 0 0 0 ] 1;
+    n               n [ 0 0 0 0 0 0 0 ] 1;
 }
+
+BirdCarreauCoeffs
+{
+    nu0             nu0 [ 0 2 -1 0 0 0 0 ] 1e-06;
+    nuInf           nuInf [ 0 2 -1 0 0 0 0 ] 1e-06;
+    k               k [ 0 0 1 0 0 0 0 ] 0;
+    n               n [ 0 0 0 0 0 0 0 ] 1;
+}
+
 
 // ************************************************************************* //

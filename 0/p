@@ -23,11 +23,11 @@ boundaryField
 {
     backplane
     {
-        type    symmetryPlane;
+        type        symmetryPlane;
     }
     frontplane
     {
-        type    symmetryPlane;
+        type        symmetryPlane;
     }
     inlet          
     {
@@ -35,17 +35,16 @@ boundaryField
     }
     outlet           
     {
-        type            fixedValue;
+        type        fixedValue;
         value       uniform 0;
     }
     Flipper_Flipper
     {
-        type            zeroGradient;
+        type        zeroGradient;
     }
-
     farfield
     {
-        type    zeroGradient;
+        type        zeroGradient;
     }
 }
 

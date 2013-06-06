@@ -9,43 +9,17 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       volVectorField;
-    location    "0";
-    object      U;
+    class       dictionary;
+    location    "constant";
+    object      RASProperties;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 1 -1 0 0 0 0];
+RASModel        SpalartAllmaras;
 
-internalField   uniform (0 0 0);
+turbulence      on;
 
-boundaryField
-{
-    inlet
-    {
-        type            fixedValue;
-        value           uniform (5 0 0);
-    }
-    outlet
-    {
-        type            zeroGradient;
-    }
-    farfield
-    {
-        type            zeroGradient;
-    }
-    frontplane
-    {
-        type            symmetryPlane;
-    }
-    backplane
-    {
-        type            symmetryPlane;
-    }
-    Flipper_Flipper
-    {
-        type            wall;
-    }
-}
+printCoeffs     on;
+
 
 // ************************************************************************* //
