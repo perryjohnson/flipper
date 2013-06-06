@@ -37,7 +37,7 @@ geometry
 
     // User defined region names
     //- Refine a bit extra in the wake behind the flipper
-    refineHole
+    refineWake
     {
         type  searchableBox;  // region defined by bounding box
         min   (-0.1 -0.1 0);
@@ -137,6 +137,12 @@ castellatedMeshControls
             mode distance;
             // levels ((1e-3 6) (1e-2 2));  // fine mesh (from Darwin)
             levels ((1e-3 3) (1e-2 2));  // coarse mesh
+        }
+        refineWake
+        {
+            mode inside;
+            levels ((1E15 3));  // note: first entry in levels (distance=1E15)
+                                //       is ignored, but required
         }
     }
 
