@@ -49,7 +49,7 @@ functions
 {
     forceCoeffsFlipper
     {
-        type forceCeoffs;
+        type forceCoeffs;
         functionObjectLibs ("libforces.so");
         patches ("Flipper_Flipper");
 
