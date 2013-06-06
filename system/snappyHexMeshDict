@@ -141,7 +141,7 @@ castellatedMeshControls
         refineWake
         {
             mode inside;
-            levels ((1E15 3));  // note: first entry in levels (distance=1E15)
+            levels ((1E15 2));  // note: first entry in levels (distance=1E15)
                                 //       is ignored, but required
         }
     }
