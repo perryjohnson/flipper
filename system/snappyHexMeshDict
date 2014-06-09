@@ -108,8 +108,8 @@ castellatedMeshControls
         Flipper
         {
             // Surface-wise min and max refinement level
-            // level (5 6);  // fine mesh (from Darwin)
-            level (2 3);   // coarse mesh
+            level (4 5);  // fine mesh (from Darwin)
+            // level (2 3);   // coarse mesh
         }
     }
 
@@ -136,12 +136,13 @@ castellatedMeshControls
         {
             mode distance;
             // levels ((1e-3 6) (1e-2 2));  // fine mesh (from Darwin)
-            levels ((1e-3 3) (1e-2 2));  // coarse mesh
+            levels ((1e-3 5) (1e-2 3));  // fine mesh
+            // levels ((1e-3 3) (1e-2 2));  // coarse mesh
         }
         refineWake
         {
             mode inside;
-            levels ((1E15 2));  // note: first entry in levels (distance=1E15)
+            levels ((1E15 3));  // note: first entry in levels (distance=1E15)
                                 //       is ignored, but required
         }
     }
